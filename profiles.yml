@@ -1,0 +1,23 @@
+pg-dbt-zoomcamp:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: my_user
+      password: my_password
+      port: 5432
+      dbname: production
+      schema: dbt_daniel
+      threads: 4
+      keeplives_idle: 0
+bq-de-zoomcamp:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: taxi-rides-ny
+      dataset: dt_daniel
+      threads: 4
+      keyfile: my_keys.json
