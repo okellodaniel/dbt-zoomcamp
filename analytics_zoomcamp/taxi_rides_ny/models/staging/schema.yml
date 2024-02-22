@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: staging
     database: data-talks-412218
-    schema: dbt_dokello
+    schema: dbt_zoomcamp
     
     tables:
       - name: green_taxi_trips
