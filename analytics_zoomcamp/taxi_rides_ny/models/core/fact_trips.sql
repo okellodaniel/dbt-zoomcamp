@@ -18,17 +18,12 @@ trips_union as (
     select * from green_taxi_trip_data 
     union all
     select * from yellow_taxi_trip_data
-),
+), 
 dim_zones as (
     select * from {{ ref("dim_zones") }}
     where borough != 'Unknown'
 )
 
--- select * from trips_union
--- inner join dim_zones as pickup_zone
--- on trips_union.pickup_locationid = pickup_zone.locationid
--- inner join dim_zones as dropoff_zone
--- on trips_union.dropoff_locationid = dropoff_zone.locationid
 select trips_union.tripid, 
     trips_union.vendorid, 
     trips_union.service_type,
