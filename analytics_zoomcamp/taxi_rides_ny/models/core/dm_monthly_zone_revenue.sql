@@ -9,7 +9,7 @@ with trips_data as {
 }
 
 select
-    pickup_zone as revenue_zone,
+    pickup_zone as revenue_zone,=
     {{ dbt.date_trunc("month", "pickup_datetime") }} as revenue_month,
     service_type
 
